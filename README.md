@@ -42,7 +42,7 @@
 <img width="1246" height="338" alt="image" src="https://github.com/user-attachments/assets/bad78d89-bfb0-4c5f-a0f7-21a469799ec7" />
 
 
-3. Вывести маршрут в виде таблицы с выравниванием колонок
+2. Вывести маршрут в виде таблицы с выравниванием колонок
    
     Команда выводит весь маршрут автобуса в виде таблицы с выравниванием колонок
 <img width="1861" height="399" alt="image" src="https://github.com/user-attachments/assets/793a5c64-a723-47db-a76b-da61365362a3" />
