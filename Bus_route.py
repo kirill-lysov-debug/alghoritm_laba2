@@ -145,7 +145,7 @@ def main():
 
         elif choice == "4":
             route.reverse_route()
-            print("Обратный маршрут построен успешно (текущий маршрут развернут)!")
+            print("Обратный маршрут построен успешно!")
 
         elif choice == "5":
             if not route.head:
