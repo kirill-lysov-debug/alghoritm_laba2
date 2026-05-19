@@ -1,6 +1,5 @@
 import sys
 
-# Класс остановки (связанный список)
 class BusStop:
     def __init__(self, name: str, latitude: float, longitude: float, time_to_next: int):
         self.name = name                      
@@ -8,14 +7,11 @@ class BusStop:
         self.time_to_next = time_to_next      
         self.next = None                      
 
-
-# Класс маршрута (связанный список)
 class BusRoute:
     def __init__(self):
         self.head = None
         self.tail = None
 
-    # 1. Добавление остановки в конец маршрута
     def add_stop(self, name: str, latitude: float, longitude: float, time_to_next: int):
         new_stop = BusStop(name, latitude, longitude, time_to_next)
         if not self.head:
@@ -25,7 +21,6 @@ class BusRoute:
             self.tail.next = new_stop
             self.tail = new_stop
 
-    # 2. Расчет общего времени маршрута
     def total_route_time(self) -> int:
         total_time = 0
         current = self.head
@@ -34,7 +29,6 @@ class BusRoute:
             current = current.next
         return total_time
 
-    # 3. Определение, где будет автобус через N остановок
     def find_stop_after_n(self, start_stop_name: str, n: int) -> str:
         current = self.head
         while current and current.name.lower() != start_stop_name.lower():
@@ -51,7 +45,6 @@ class BusRoute:
         
         return f"Через {n} ост. автобус будет на станции: '{current.name}'."
 
-    # 4. Построение обратного маршрута
     def reverse_route(self):
         if not self.head or not self.head.next:
             return  
@@ -72,7 +65,6 @@ class BusRoute:
         stops_list[0].next = None
         stops_list[0].time_to_next = 0
 
-    # 5. Найти остановки, до которых автобус доедет за заданное время
     def find_stops_within_time(self, max_time: int) -> list:
         reachable_stops = []
         current = self.head
@@ -88,7 +80,6 @@ class BusRoute:
             
         return reachable_stops
 
-    # 6. Вывести маршрут в виде таблицы с выравниванием колонок
     def print_route_table(self):
         if not self.head:
             print("Маршрут пуст. Сначала добавьте остановки.")
