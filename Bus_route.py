@@ -82,7 +82,7 @@ class BusRoute:
 
     def print_route_table(self):
         if not self.head:
-            print("Маршрут пуст. Сначала добавьте остановки.")
+            print("Сначала добавьте остановки.")
             return
 
         header = f"| {'Название остановки':<25} | {'Координаты':<22} | {'Время до след. (мин)':<20} |"
@@ -127,7 +127,7 @@ def main():
                 route.add_stop(name, lat, lon, time_next)
                 print(f"Успешно: Остановка '{name}' добавлена!")
             except ValueError:
-                print("Ошибка ввода! Координаты должны быть числами, а время — целым числом.")
+                print("Координаты должны быть числами, а время — целым числом.")
 
         elif choice == "2":
             print(f"Общее время маршрута: {route.total_route_time()} минут.")
@@ -141,7 +141,7 @@ def main():
                 n = int(input("Введите количество остановок (N): "))
                 print(route.find_stop_after_n(start_stop, n))
             except ValueError:
-                print("Ошибка! Количество остановок должно быть целым числом.")
+                print("Количество остановок должно быть целым числом.")
 
         elif choice == "4":
             route.reverse_route()
@@ -158,16 +158,16 @@ def main():
                 for stop_name, t in stops:
                     print(f" - {stop_name} (время в пути: {t} мин.)")
             except ValueError:
-                print("Ошибка! Время должно быть целым числом.")
+                print("Время должно быть целым числом.")
 
         elif choice == "6":
             route.print_route_table()
 
         elif choice == "0":
-            print("Выход из программы. До свидания!")
+            print("Конец программы.")
             sys.exit()
             
         else:
-            print("Неверная команда! Пожалуйста, выберите пункт от 0 до 6.")
+            print("Выберите пункт от 0 до 6.")
 if __name__ == "__main__":
     main()
